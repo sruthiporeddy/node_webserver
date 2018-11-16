@@ -1,6 +1,8 @@
 const express = require('express');
 const hbs = require('hbs');
 const fs = require('fs');
+
+const port = process.env.port || 3000;
 var app = express();
 
 
@@ -21,10 +23,10 @@ app.use((req,res,next) => {
     next();
 })
 
-app.use((req,res,next) => {
+/* app.use((req,res,next) => {
     res.render('maintance.hbs');
     next();
-})
+}) */
 
 app.get('/', (req,res) => {
     res.send('Hello World  Express');
@@ -38,6 +40,6 @@ app.get('/obj', (req,res) => {
 
 
 
-app.listen(3000, () => {
-    console.log("server started");
+app.listen(port, () => {
+    console.log(`server started on ${port}`);
 });
