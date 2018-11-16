@@ -32,7 +32,7 @@ app.get('/', (req,res) => {
     res.send('Hello World  Express');
 });
 
-app.get('/obj', (req,res) => {
+app.get('/about', (req,res) => {
     res.render('about.hbs',{
        name:'About dynamic'
     })
